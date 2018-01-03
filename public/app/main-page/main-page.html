@@ -1,0 +1,18 @@
+<div class="hero is-primary">
+    <div class="hero-head">
+        <header class="nav">
+            <div class="container">
+                <div id="app-title" class="nav-left"><a sref="jobsList">hireMe: Jobs opportunities for web pros</a></div>
+                <div id="login" class="nav-right">
+                    Hello, <span>&nbsp;{{$ctrl.loggedIn}}&nbsp;</span> |
+                    <span class="point" ng-click="$ctrl.showLogin()" ng-hide="$ctrl.authenticated">&nbsp;login</span>
+                    <span class="point" ng-click="$ctrl.logout()" ng-show="$ctrl.authenticated">&nbsp;logout</span>
+                </div>
+            </div>
+        </header>
+    </div>
+    <user-bar ng-show="$ctrl.authenticated"></user-bar>
+</div>
+<login-dialog ng-show="$ctrl.showLoginDialog"></login-dialog>
+<main ui-view>
+</main>

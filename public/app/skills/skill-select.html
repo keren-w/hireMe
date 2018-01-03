@@ -1,0 +1,9 @@
+<div class="search-by">
+    <div class="select is-multiple">
+        <select multiple ng-model="$ctrl.selectedSkills">
+            <option ng-repeat="skill in $ctrl.mySkills" value={{skill}}>{{skill.skill_title}}</option>
+        </select>
+
+        <button class="button is-primary is-small" ng-click="$ctrl.selectSkills();">Choose</button>
+    </div>
+</div>

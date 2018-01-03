@@ -1,0 +1,33 @@
+<div class="modal">
+    <div class="modal-background" ng-click="$ctrl.closeDialog()"></div>
+    <div class="modal-contents">
+
+        <div class="mod-inside">
+
+            <div ng-show="$ctrl.loginPanels.loginForm">
+                <div class="field is-grouped">
+                    <label class="label">Username:
+                        <input class="input is-primary" type="text" ng-model="$ctrl.username">
+                    </label>
+                    <label class="label">Password:
+                        <input class="input is-primary" type="password" ng-model="$ctrl.password">
+                    </label>
+                </div>
+
+                <p class="control">
+                    <a class="button is-primary is-right" ng-click="$ctrl.checkSendAuth()">
+                        Submit
+                    </a>
+                </p>
+
+                <br> Don't have an account? <span class="point" ng-click="$ctrl.showSignUp()">Sign up</span>
+
+
+                <div ng-show="$ctrl.loginPanels.signUpForm">
+                </div>
+            </div>
+
+
+            <button class="modal-close is-large" aria-label="close" ng-click="$ctrl.closeDialog()"></button>
+        </div>
+    </div>

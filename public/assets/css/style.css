@@ -1,0 +1,143 @@
+html {
+background: none
+}
+
+body {
+    margin: 0;
+    background: #fafcff
+}
+
+#app-title {
+    font-size: 1.5em;
+}
+
+ul {
+    display: inline;
+    padding: 0;
+}
+
+li {
+    display: inline;
+}
+
+main {
+    font-size: 0.9em;
+    min-width: 960px;
+    padding-top: 54px;
+    width: 880px;
+    margin: 0 auto;
+}
+
+#search-container {
+    background: white;
+    padding: 24px;
+    height: 100%;
+}
+
+.search-by {
+    padding: 10px 15px 10px 35px;
+}
+
+a {
+    color: black;
+}
+
+hr {
+    margin: 10px 0;
+}
+
+button {
+    margin: 10px 0 0;
+}
+
+.my-sub {
+    margin-bottom: 10px;
+}
+
+.point:hover {
+    cursor: pointer;
+}
+
+.modal {
+    z-index: 99999;
+    position: fixed;
+    display: block;
+}
+
+.modal-background {
+    height: 100vh;
+    width: 100vw;
+    background: rgba(0, 0, 0, 0.4)
+}
+
+.modal-contents {
+    top: 25%;
+    width: 50%;
+    margin: 0 auto; 
+    background: white;
+    position: relative;
+}
+
+.modal-close {
+    position: absolute;
+    top: -25px;
+    right: -15px;
+    z-index: 99999;
+    background: black
+}
+
+.mod-inside {
+    padding: 2em;
+}
+
+.label, input {
+    display: inline-block
+}
+
+.rtl {
+    text-align: right;
+}
+
+.title {
+    position: relative;
+}
+
+.apply {
+    position: absolute;
+    top: 24px;
+    right: 24px
+}
+
+#level {
+    margin-bottom: 0.5rem;
+    padding: 5px 10px;
+    background: #d9d3ce
+}
+
+#filter {
+    font-weight: bold;
+}
+
+.expand {
+    color: #e77e27;
+    font-weight: bold
+}
+
+.profile-background {
+    background: white;
+    padding: 2em;
+}
+
+.post-preview {
+    display: flex;
+    justify-content: space-between;
+}
+
+.post-main-title {
+    display: block;
+    margin: 0;
+}
+
+.post-content {
+    width: 66.6%;
+}

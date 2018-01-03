@@ -1,0 +1,26 @@
+<aside class="menu">
+
+    <p class="title is-4">
+        Filter Results
+    </p>
+    <ul class="menu-list">
+        <li><a ng-click="$ctrl.toggleFilter('bySkills')">By Skills</a>
+            <div id="selectSkill" ng-show="$ctrl.panels.bySkills">
+                <skill-select></skill-select>
+            </div>
+        </li>
+        <hr>
+        <li><a ng-click="$ctrl.toggleFilter('byPublisher')">By Publisher</a>
+            <div ng-show="$ctrl.panels.byPublisher">
+                <user-select></user-select>
+            </div>
+        </li>
+        <hr>
+        <li><a ng-click="$ctrl.toggleFilter('byLocation')">By Location</a>
+            <div ng-show="$ctrl.panels.byLocation"></div>
+        </li>
+        <hr>
+        <li> <a ng-click="$ctrl.showAllJobs()">Show All</li></a>
+    </ul>
+
+</aside>

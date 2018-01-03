@@ -1,0 +1,17 @@
+  <div id="level" ng-show="$ctrl.allowFiltering">
+        <a id="filter" ng-click="$ctrl.toggleFilterView()">{{$ctrl.showHideFilter}}</a>
+    </div>
+<div class="columns">
+
+    <div class="column is-4" ng-hide="$ctrl.filterLauncher">
+        <div id="search-container" class="card">
+            <search-jobs></search-jobs>
+        </div>
+    </div>
+
+    <div id="list-container" class="column">
+        <div ng-repeat="job in $ctrl.myJobs track by $index" class="card">
+            <job item="job" authenticated="$ctrl.authenticated"></job>
+        </div>
+    </div>
+</div>

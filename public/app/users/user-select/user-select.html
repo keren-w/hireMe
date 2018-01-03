@@ -1,0 +1,9 @@
+<div class="search-by">
+    <div class="select is-multiple">
+        <select multiple ng-model="$ctrl.selectedUsers">
+            <option ng-repeat="user in $ctrl.myUsers" value={{user._id}}>{{user.username}}</option>
+        </select>
+
+        <button class="button is-primary is-small" ng-click="$ctrl.selectUsers();">Choose</button>
+    </div>
+</div>

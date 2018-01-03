@@ -1,0 +1,14 @@
+<div class="card-content" style="padding: 1rem 1.5rem">
+
+    <div class="post-preview">
+        <div class="post-title">
+            <span class="title is-5 post-main-title" style="margin: 0">{{$ctrl.item.job_title}}</span>
+            <span class="subtitile">Published {{$ctrl.item.published}} ({{$ctrl.item.daysAgo}} days ago)</span>
+        </div>
+        <div class="post-content">
+            <div style="text-align: justify;"><strong>Job description: </strong>{{$ctrl.item.description | limitTo: 100}}...</div>
+            <div style="display:flex; justify-content: flex-end">
+                <a ng-click="$ctrl.showUpdatePost()" class="expand">View | Update</a></div>
+            <!-- <a ui-sref="updatePost({job: $ctrl.item.description})" class="expand">View | Update</a></div> -->
+        </div>
+    </div>

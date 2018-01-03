@@ -1,0 +1,9 @@
+<div class="title is-4">Jobs posted by {{$ctrl.userProfile.username}}</div>
+<div class="columns">
+    <div id="list-container" class="column">
+        <div ng-repeat="job in $ctrl.myJobs track by $index" class="card">
+            <user-posts item="job"></user-posts>
+        </div>
+    </div>
+</div>
+

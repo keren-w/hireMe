@@ -1,0 +1,33 @@
+<div class="job card-content">
+
+    <p class="title is-4" style="position: relative"><strong>{{$ctrl.item.job_title}}</strong></p>
+    <p class="subtitle is-6" style="margin-bottom: 15px">{{$ctrl.item.daysAgo}} days ago</p>
+    <div class="content">
+
+        <strong>Publisher: </strong>{{$ctrl.item.publisher.username}}<br>
+        <strong>Job description: </strong>{{$ctrl.item.description | limitTo: 100}}...
+        <a href="#" class="expand" ng-click="$ctrl.showMore=true">Click to expand&#x25B8;</a><br>
+        <div class="tags" style="margin:0">
+            <span class="tag" ng-repeat="skill in $ctrl.item.skills track by $index">
+                {{skill.skill_title}}
+            </span>
+        </div>
+
+        <!-- apply button -->
+        <div ng-show="$ctrl.authenticated">
+            <a class="button is-primary apply" ng-click="$ctrl.applyToJob($ctrl.item._id, $ctrl.pageuser.userId)" ng-hide="$ctrl.isApplied">Apply</a>
+            <a class="button is-primary apply" ng-show="$ctrl.isApplied" ng-disabled="$ctrl.isApplied">Applied</a>
+        </div>
+    </div>
+</div>
+
+<!-- detailed job view -->
+<div class="modal" ng-show="$ctrl.showMore">
+    <div class="modal-background" ng-click="$ctrl.showMore=false"></div>
+    <div class="modal-contents">
+        <div class="mod-inside">
+            <p>{{$ctrl.item.description}}</p>
+            <button class="modal-close is-large" aria-label="close" ng-click="$ctrl.showMore=false"></button>
+        </div>
+    </div>
+</div>

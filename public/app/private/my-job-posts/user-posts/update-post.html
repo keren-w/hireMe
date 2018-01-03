@@ -1,0 +1,71 @@
+<div class="profile-background">
+    <div id="list-container" class="column">
+        <div class="job-details">
+
+            <table class="table">
+
+                <!-- view/update title -->
+                <tr>
+                    <p style="margin-bottom: 1rem">
+                        <strong>Job Title: </strong>
+
+                        <span ng-show="$ctrl.editTitle">
+                            {{$ctrl.job.job_title}}
+                            <a href="" class="expand" ng-click="$ctrl.editTitle=false">Edit</a>
+                        </span>
+
+                        <span ng-hide="$ctrl.editTitle">
+                            <input type="text" value={{$ctrl.job.job_title}} ng-model="$ctrl.job.job_title" ng-change="$ctrl.update.job_title=true;">
+                        </span>
+                    </p>
+                </tr>
+
+                <!-- view/update description -->
+                <tr>
+                    <p style="margin-bottom: 1rem">
+                        <strong>Job Description:</strong>
+
+                        <span ng-show="$ctrl.editDesc">
+                            {{$ctrl.job.description}}
+                        <a href="" class="expand" ng-click="$ctrl.editDesc=false">Edit</a>
+                        </span>
+
+                        <span ng-hide="$ctrl.editDesc">
+                            <textarea cols="100%" rows="10" style="vertical-align: top" ng-model="$ctrl.job.description" ng-change="$ctrl.update.description=true">{{$ctrl.job.description}}</textarea>
+                        </span>
+                    </p>
+                </tr>
+
+                <!-- view/update skills -->
+                <tr>
+                    <strong>Skills Required: </strong>
+                    <div class="tags" style="display: inline-block; margin-bottom:0;">
+                        <span class="tag" ng-repeat="skill in $ctrl.job.skills track by $index">
+                            {{skill.skill_title}}
+                            <a class="delete is-small" ng-click="$ctrl.removeSkill($index)"></a>
+                        </span>
+                    </div>
+                        <a href="" class="expand" ng-click="$ctrl.viewSkills=true">&nbsp;&nbsp;Add skills</a>
+                        <skill-select ng-show="$ctrl.viewSkills"></skill-select>
+                    
+                </tr>
+
+                <!-- view/delete applicants -->
+                <tr>
+                    <p><strong>Candidates who applied for the position: </strong></p>
+                    <ul>
+                        <div ng-repeat="applicant in $ctrl.job.applicants track by $index">{{applicant.username}}
+                                <a href="" class="expand" ng-click="$ctrl.removeApplicant($index)" style="font-size:0.85em; font-weight: bolder">&#x2716;</a>
+                        </div>
+                    </ul>
+                </tr>
+            </table>
+            <!-- {{$ctrl.job}} -->
+        </div>
+
+        <div class="level" style="margin-top: 10px;">
+            <a ui-sref="myJobPosts" class="button is-primary level-right">Return to posts list</a>
+            <a class="button is-primary level-left" ng-click="$ctrl.updateJob()">Save Update</a>
+        </div>
+    </div>
+</div>
